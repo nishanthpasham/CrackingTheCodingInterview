@@ -14,6 +14,7 @@ public class SinglyLinkedList<E> {
 			this.item = item;
 		}
 		
+		@Override
 		protected Node<E> clone() {
 			Node<E> n = new Node<E>(null, this.item);
 			return n;
@@ -129,6 +130,7 @@ public class SinglyLinkedList<E> {
 			return head.equals(other.head);
 	}
 	
+	@Override
 	public String toString(){
 		Node<E> n = head;
 		StringBuffer buffer = new StringBuffer(n.item.toString());

@@ -124,7 +124,7 @@ public class ThreeInOneStack<T> implements Serializable {
 	
 	private synchronized boolean isResizeNeeded(int stackNum) {
 		checkStackNumIsValid(stackNum);
-		double ratio = (double) ((stackSize[stackNum]+1)/stackCapacity[stackNum]);
+		double ratio = (stackSize[stackNum]+1)/stackCapacity[stackNum];
 		return ratio>capacityThreshold;
 	}
 	

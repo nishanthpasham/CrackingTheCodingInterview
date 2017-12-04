@@ -10,7 +10,7 @@ public class MyArrayBackedStack<T> implements MyStack<T> {
 	
 	@SuppressWarnings("unchecked")
 	public MyArrayBackedStack(int initCapacity) {
-		elementData = (T[]) new Object[initCapacity];
+		elementData = new Object[initCapacity];
 	}
 	
 	public MyArrayBackedStack(MyArrayBackedStack<T> other) {
@@ -20,7 +20,7 @@ public class MyArrayBackedStack<T> implements MyStack<T> {
 	
 	@SuppressWarnings("unchecked")
 	public MyArrayBackedStack() {
-		elementData = (T[]) new Object[DEFAULT_INIT_CAPACITY];
+		elementData = new Object[DEFAULT_INIT_CAPACITY];
 	}
 	
 	@SuppressWarnings("unchecked")

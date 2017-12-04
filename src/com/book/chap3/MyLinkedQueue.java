@@ -1,11 +1,10 @@
 package com.book.chap3;
 
-import java.io.Serializable;
-
 import com.book.exception.EmptyQueueException;
 
-public class MyLinkedQueue<T> implements MyQueue<T>, Serializable {
-	private static final long serialVersionUID = 16464285247L;
+public class MyLinkedQueue<T> implements MyQueue<T> {
+	
+	private int size;
 
 	private static class MyQueueNode<T> {
 		T data;
@@ -21,6 +20,7 @@ public class MyLinkedQueue<T> implements MyQueue<T>, Serializable {
 	
 	//add(item) remove() peek() isEmpty()
 	
+	@Override
 	public void add(T data) {
 		if(first == null) {
 			first = new MyQueueNode<T>(data);
@@ -33,8 +33,10 @@ public class MyLinkedQueue<T> implements MyQueue<T>, Serializable {
 			last = new MyQueueNode<T>(data);
 			node.next = last;
 		}
+		size++;
 	}
 	
+	@Override
 	public T remove() {
 		T data;
 		if(first == null)
@@ -43,19 +45,28 @@ public class MyLinkedQueue<T> implements MyQueue<T>, Serializable {
 			data = first.data;
 			first = null;
 			last = null;
+			size=0;
 		} else {
 			data = first.data;
 			first = first.next;
+			size--;
 		}
 		return data;
 	}
 	
+	@Override
 	public T peek() {
 		return first == null ? null : first.data;
 	}
 	
+	@Override
 	public boolean isEmpty() {
 		return first == null;
+	}
+
+	@Override
+	public int size() {
+		return size;
 	}
 
 }

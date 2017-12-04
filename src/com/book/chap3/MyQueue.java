@@ -8,5 +8,8 @@ public interface MyQueue<T> {
 	
 	public T peek();
 	
+	//No need for this method!
+	public int size();
+	
 	public boolean isEmpty();
 }

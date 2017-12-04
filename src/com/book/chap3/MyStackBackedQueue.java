@@ -45,4 +45,10 @@ public class MyStackBackedQueue<T> implements MyQueue<T> {
 		return flippedStack;
 	}
 
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
